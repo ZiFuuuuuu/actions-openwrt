@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build 5.10-hwnat
+name: Build r3g-hwnat
 
 on:
   repository_dispatch:
