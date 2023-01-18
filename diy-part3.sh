@@ -14,4 +14,4 @@
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 #复制内核5.10版本CPU超频补丁
-cp 322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10/
+cp /322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10/
