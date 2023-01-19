@@ -62,7 +62,7 @@ jobs:
         ln -sf /workdir/immortalwrt $GITHUB_WORKSPACE/immortalwrt
         
     - name: wget boost file 
-      run: cd immortalwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/322-mt7621-fix-cpu-clk-add-clkdev.patch
+      run: cd immortalwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
 
     - name: Load custom feeds
       run: |
