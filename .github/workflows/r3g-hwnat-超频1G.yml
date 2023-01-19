@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build r3g-hwnat
+name: Build r3g-hwnat-超频1G
 
 on:
   repository_dispatch:
@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: r3g-hwnat.config
-  DIY_P1_SH: r3g-hwnat-超频1G.sh
+  DIY_P1_SH: hwnat-超频1G.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
