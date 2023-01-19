@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: openwrt-18.06-k5.4
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: mini-pinpin-wifi.config
-  DIY_P1_SH: pinpin-wifi.sh
+  DIY_P1_SH: mini-pinpin-wifi.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
