@@ -17,4 +17,7 @@
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-git clone https://github.com/wiwizcom/WiFiPortal.git package
+git clone https://github.com/wiwizcom/WiFiPortal.git
+cp -r WiFiPortal/dcc2-wiwiz package
+cp -r WiFiPortal/eqos-master-wiwiz package
+cp -r WiFiPortal/wifidog-wiwiz package
