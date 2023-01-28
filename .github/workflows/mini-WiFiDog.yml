@@ -62,11 +62,7 @@ jobs:
         ln -sf /workdir/immortalwrt $GITHUB_WORKSPACE/immortalwrt
         
     - name: Clone WiFiDog 
-      run: cd immortalwrt
-      git clone https://github.com/wiwizcom/WiFiPortal.git
-      cp -r WiFiPortal/dcc2-wiwiz package/
-      cp -r WiFiPortal/eqos-master-wiwiz package/
-      cp -r WiFiPortal/wifidog-wiwiz package/
+      run: cd immortalwrt && git clone https://github.com/wiwizcom/WiFiPortal.git && cp -r WiFiPortal/dcc2-wiwiz package/ && cp -r WiFiPortal/eqos-master-wiwiz package/ && cp -r WiFiPortal/wifidog-wiwiz package/
       
     - name: Load custom feeds
       run: |
