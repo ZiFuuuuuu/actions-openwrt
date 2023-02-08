@@ -63,6 +63,9 @@ jobs:
         
     - name: Clone nft-fullcone
       run: git clone https://github.com/fullcone-nat-nftables/nft-fullcone.git openwrt/package/nft-fullcone
+      
+    - name: Clone boost file 
+      run: cd openwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
         
     - name: Load custom feeds
       run: |
@@ -70,6 +73,7 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+    
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
