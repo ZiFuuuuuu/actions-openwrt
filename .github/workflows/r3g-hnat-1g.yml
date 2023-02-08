@@ -23,9 +23,8 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: r3g-hnat.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  CONFIG_FILE: config/r3g-hnat.config
+  DIY_P2_SH: diy-sh/change-ip.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -66,13 +65,7 @@ jobs:
     
     - name: Clone boost file 
       run: cd immortalwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
-
-    - name: Load custom feeds
-      run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF immortalwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd immortalwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        
     - name: Update feeds
       run: cd immortalwrt && ./scripts/feeds update -a
 
