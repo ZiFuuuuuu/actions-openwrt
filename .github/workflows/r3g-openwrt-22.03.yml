@@ -20,8 +20,6 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/r3g-openwrt-22.03.config
   DIY_P1_SH: diy-sh/pw-upx.sh
@@ -58,14 +56,11 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        wget -O 1.zip https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.3.zip && unzip 1.zip && mv openwrt-22.03.3/ openwrt/
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
     - name: Clone nft-fullcone
       run: git clone https://github.com/fullcone-nat-nftables/nft-fullcone.git openwrt/package/nft-fullcone
-      
-    - name: Clone boost file 
-      run: cd openwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
         
     - name: Load custom feeds
       run: |
