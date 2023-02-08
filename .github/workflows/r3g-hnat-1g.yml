@@ -67,12 +67,9 @@ jobs:
         chmod +x $DIY_P1_SH
         cd immortalwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH 
-        
-#    - name: Clone openwrt-upx
-#      run: git clone https://github.com/kuoruan/openwrt-upx.git immortalwrt/package/openwrt-upx
-    
-#    - name: Clone boost file 
-#      run: cd immortalwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
+          
+    - name: Clone boost file 
+      run: cd immortalwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/extra-files/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
         
     - name: Update feeds
       run: cd immortalwrt && ./scripts/feeds update -a
