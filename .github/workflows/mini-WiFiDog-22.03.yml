@@ -23,8 +23,8 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: /config/mini-openwrt-22.03-WiFiDog.config
-  DIY_P2_SH: /diy-sh/WiFiDog-change-ip.sh
+  CONFIG_FILE: config/mini-openwrt-22.03-WiFiDog.config
+  DIY_P2_SH: diy-sh/WiFiDog-change-ip.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
