@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build mini-WiFiDog-22.03
+name: Build mini-WiFiPortal
 
 on:
   repository_dispatch:
@@ -23,8 +23,9 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/mini-openwrt-22.03-WiFiDog.config
-  DIY_P2_SH: diy-sh/WiFiDog-change-ip.sh
+  CONFIG_FILE: config/mini-WiFiPortal.config
+  DIY_P1_SH: diy-sh/WiFiPortal.sh
+  DIY_P2_SH: diy-sh/WiFiPortal-Modify-ip.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
@@ -59,10 +60,14 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        
-    - name: Clone WiFiDog 
-      run: cd openwrt && git clone https://github.com/wiwizcom/WiFiPortal.git && cp -r WiFiPortal/dcc2-wiwiz package/ && cp -r WiFiPortal/eqos-master-wiwiz package/ && cp -r WiFiPortal/wifidog-wiwiz package/
-      
+  
+    - name: Load custom feeds
+      run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH      
+    
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
