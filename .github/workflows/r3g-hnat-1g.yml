@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/r3g-hnat.config
-  DIY_P1_SH: diy-sh/Add-Tools.sh
+  DIY_P1_SH: diy-sh/Tools.sh
   DIY_P2_SH: diy-sh/Modify.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
