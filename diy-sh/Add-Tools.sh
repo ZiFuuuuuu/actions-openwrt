@@ -10,4 +10,4 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 # Add a feed source
-echo 'src-git upx https://github.com/kuoruan/openwrt-upx' >>feeds.conf.default
+#echo 'src-git upx https://github.com/kuoruan/openwrt-upx' >>feeds.conf.default
