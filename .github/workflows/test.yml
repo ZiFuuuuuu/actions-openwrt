@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build test r3g-hnat-update_kernel
+name: Build r3g-immortalwrt-hnat
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/ZiFuuuuuu/immortalwrt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/r3g-hnat.config
@@ -60,14 +60,18 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH immortalwrt
         ln -sf /workdir/immortalwrt $GITHUB_WORKSPACE/immortalwrt
-        
+ 
+    - name: Clone hnat
+      working-directory: /workdir
+      run: git clone https://github.com/padavanonly/immortalwrt.git hnat && cp -r hnat/target/linux/ramips immortalwrt/target/linux
+      
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF immortalwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd immortalwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH 
-          
+               
     - name: Update feeds
       run: cd immortalwrt && ./scripts/feeds update -a
 
