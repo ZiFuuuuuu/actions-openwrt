@@ -62,7 +62,7 @@ jobs:
         ln -sf /workdir/immortalwrt $GITHUB_WORKSPACE/immortalwrt
         
     - name: Clone hnat
-      run: git clone https://github.com/padavanonly/immortalwrt.git hnat
+      run: git clone https://github.com/ZiFuuuuuu/immortalwrt.git hnat
       
     - name: 复制hnat文件到immortalwrt
       run: cp -r hnat/target/linux/ramips immortalwrt/target/linux
