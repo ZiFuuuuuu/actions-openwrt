@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build rm3g-WiFiPortal
+name: Build r3g-WiFiPortal
 
 on:
   repository_dispatch:
