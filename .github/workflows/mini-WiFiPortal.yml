@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build openwrt-21.02-mini-WiFiPortal
+name: 编译拼拼WiFi固件-R1C
 
 on:
   repository_dispatch:
