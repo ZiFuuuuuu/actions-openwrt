@@ -178,7 +178,7 @@ jobs:
       uses: ZiFuuuuuu/delete-workflow-runs@main
       with:
         retain_days: 1
-        keep_minimum_runs: 5
+        keep_minimum_runs: 3
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.2.1
