@@ -10,7 +10,8 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 # Add a feed source
-#echo 'src-git upx https://github.com/kuoruan/openwrt-upx' >>feeds.conf.default
 #echo 'src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages' >>feeds.conf.default
 #echo 'src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci' >>feeds.conf.default
 echo 'src-git openclash https://github.com/vernesong/OpenClash.git' >>feeds.conf.default
+echo 'src-git argon https://github.com/jerrykuku/luci-theme-argon.git' >>feeds.conf.default
+echo 'src-git argon_config https://github.com/jerrykuku/luci-app-argon-config.git' >>feeds.conf.default
