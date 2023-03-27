@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/MTK-HWNAT-R3G.config
+  CONFIG_FILE: config/immortaalwrt-21.02-R3G.config
   DIY_P1_SH: diy-sh/Tools.sh
   DIY_P2_SH: diy-sh/Modify.sh
   UPLOAD_BIN_DIR: false
