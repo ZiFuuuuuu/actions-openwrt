@@ -69,7 +69,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH 
           
     - name: Clone boost file 
-      run: cd lede && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-lede/main/extra-files/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
+      run: cd lede && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/extra-files/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.4
         
     - name: Update feeds
       run: cd lede && ./scripts/feeds update -a
