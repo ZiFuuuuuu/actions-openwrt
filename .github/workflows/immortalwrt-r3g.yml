@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 编译MTK-HWNAT驱动固件-R3G
+name: 编译immortalwrt-21.02-R3G
 
 on:
   repository_dispatch:
@@ -20,10 +20,10 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/MTK-HWNAT-R3G.config
+  CONFIG_FILE: config/immortalwrt-21.02-r3g.config
   DIY_P1_SH: diy-sh/Tools.sh
   DIY_P2_SH: diy-sh/Modify.sh
   UPLOAD_BIN_DIR: false
