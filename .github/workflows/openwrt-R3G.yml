@@ -69,13 +69,13 @@ jobs:
     #    $GITHUB_WORKSPACE/$DIY_P1_SH 
           
     - name: Clone boost file 
-      run: cd openwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/extra-files/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
+      run: cd immortalwrt && wget -c https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/main/extra-files/322-mt7621-fix-cpu-clk-add-clkdev.patch && cp -r ./322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10
         
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd immortalwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+      run: cd immortalwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
