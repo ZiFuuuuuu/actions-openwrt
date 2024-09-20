@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: nx30pro-openwrt
+name: 237-nx30pro-openwrt
 
 on:
   repository_dispatch:
