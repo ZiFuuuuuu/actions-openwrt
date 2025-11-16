@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: nx30pro-mt798x-24.10
+name: nx30pro-mt798x-24.10-5.4
 
 on:
   repository_dispatch:
