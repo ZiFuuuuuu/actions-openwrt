@@ -10,6 +10,7 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 # Add a feed source
-echo 'src-git PWpackages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
-echo 'src-git PWluci https://github.com/xiaorouji/openwrt-passwall2.git;main' >>feeds.conf.default
+#echo 'src-git PWpackages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
+#echo 'src-git PWluci https://github.com/xiaorouji/openwrt-passwall2.git;main' >>feeds.conf.default
 #echo 'src-git openclash https://github.com/vernesong/OpenClash.git' >>feeds.conf.defaul
+echo 'src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main' >>feeds.conf.default
