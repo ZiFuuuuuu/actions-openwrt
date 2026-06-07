@@ -67,7 +67,10 @@ jobs:
         chmod +x $DIY_P1_SH
         cd immortalwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH 
-          
+    
+    - name: 更改feeds
+      run: cd immortalwrt && wget -O feeds.conf.default -N https://raw.githubusercontent.com/ZiFuuuuuu/actions-openwrt/refs/heads/main/diy-sh/feeds.conf.default
+    
     - name: Update feeds
       run: cd immortalwrt && ./scripts/feeds update -a
 
